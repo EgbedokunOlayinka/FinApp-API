@@ -68,7 +68,7 @@ class ProfileController {
 
         const newProfile = { firstName, lastName, userId };
 
-        const updateProfile = await Profile.findOneAndUpdate({_id: userId}, newProfile, {
+        const updateProfile = await Profile.findOneAndUpdate({ userId }, newProfile, {
             new: true,
             runValidators: true
         });

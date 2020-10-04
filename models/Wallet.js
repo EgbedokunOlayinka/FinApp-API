@@ -12,12 +12,7 @@ const walletSchema = new Schema({
     },
     balance: {
         type: Number,
-        default: 0.00,
-        required: true
-    },
-    walletNumber: {
-        type: Number,
-        required: true
+        default: 0
     },
     currency: {
         type: String,
@@ -26,7 +21,7 @@ const walletSchema = new Schema({
     status: {
         type: String,
         default: 'active',
-        enum: ['active', 'inactive']
+        enum: ['active', 'inactive'],
     },
     overdraft: {
         type: String,

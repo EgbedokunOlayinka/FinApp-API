@@ -9,10 +9,6 @@ const transactionSchema = new Schema({
         type: String,
         required: true
     },
-    date: {
-        type: Date,
-        default: Date.now
-    },
     walletId: {
         type: Schema.Types.ObjectId,
         ref: 'Wallet',
@@ -23,12 +19,12 @@ const transactionSchema = new Schema({
         required: true
     },
     crWallet: {
-        type: Schema.Types.ObjectId,
-        ref: 'Wallet'
+        type: String
     },
     type: {
         type: String,
-        enum: ['topup', 'payment']
+        enum: ['topup', 'payment'],
+        required: true
     }
 }, {timestamps: true});
 
